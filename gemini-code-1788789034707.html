@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post LinkedIn - FILORGA</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h1 { font-size: 20px; color: #000; text-transform: uppercase; letter-spacing: 1px; }
+        .step { margin-top: 30px; text-align: left; }
+        .step-title { font-weight: bold; font-size: 18px; margin-bottom: 15px; color: #000; }
+        
+        .instruction { font-size: 14px; color: #666; font-style: italic; margin-bottom: 20px;}
+        .text-box {
+            background: #f1f3f5;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            line-height: 1.5;
+            height: 150px;
+            overflow-y: scroll;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .btn:active { background-color: #333; }
+        
+        /* Style spécifique pour le bouton de téléchargement de la vidéo */
+        .btn-download {
+            background-color: #e9ecef;
+            color: #000;
+            margin-top: 10px;
+            border: 1px solid #ced4da;
+        }
+        .btn-download:active { background-color: #dee2e6; }
+
+        .btn-linkedin { background-color: #0a66c2; margin-top: 30px; }
+        .btn-linkedin:active { background-color: #004182; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Ambassadeurs FILORGA</h1>
+    <p>Merci de partager notre dernière innovation sur LinkedIn ! Suivez ces 3 étapes simples :</p>
+
+    <!-- ÉTAPE 1 : LA VIDÉO -->
+    <div class="step">
+        <div class="step-title">1. Téléchargez la vidéo</div>
+        <p class="instruction">Cliquez sur le bouton ci-dessous pour enregistrer la vidéo sur votre appareil.</p>
+        
+        <!-- Le lecteur vidéo -->
+        <video width="100%" controls style="border-radius: 8px; background: #000;">
+            <source src="PCMGF_HERO_20sec_VEN_16-9_0726 (1).mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la lecture de vidéos.
+        </video>
+        
+        <!-- Le bouton de téléchargement -->
+        <a href="PCMGF_HERO_20sec_VEN_16-9_0726 (1).mp4" download="PCMGF_HERO_20sec_VEN_16-9_0726 (1).mp4" class="btn btn-download">⬇️ Télécharger la vidéo</a>
+    </div>
+
+    <!-- ÉTAPE 2 : LE TEXTE -->
+    <div class="step">
+        <div class="step-title">2. Copiez le texte</div>
+        <p class="instruction">Copiez le texte ci-dessous pour l'ajouter à votre publication.</p>
+        
+        <strong>Texte du post 🇬🇧</strong>
+        <div class="text-box" id="texteEN">Skin biohacking starts here: re-training your skin to produce its own collagen. 🧬<br><br>At FILORGA, we are proud to reveal our latest breakthrough inspired by regenerative science: PRO-COLLAGEN MICRO-GROWTH FACTOR.<br><br>Growth factors are key cellular messengers in aesthetic medicine, but conventional molecules are simply too large to penetrate the skin barrier effectively.<br><br>🔬 Our scientific response? We engineered a 100% synthetic, biomimetic, micro-fragmented peptide. Designed to act 10x deeper into the skin*, this smart micro-molecule mimics natural cell signals to reboot internal collagen and elastin production:<br>⚡ +101% Collagen V**<br>⚡ +121% Elastin***<br><br>This launch marks a new frontier for FILORGA in skin longevity: delivering a visible lifting effect, supported firmness, and visibly redefined facial contours.<br><br>Congratulations to our teams who brought this biotech innovation to life 👏🏻.<br><br>Discover the new range and step into the next generation of pro-collagen science.<br><br>#Filorga #SkinBiohacking #ProCollagenMicroGrowthFactor #SkinLongevity #CollagenBanking<br><br>*Contains a Micro-Growth Factor peptide (FGF) that penetrates 10 times deeper into the superficial layers of the epidermis. Ex vivo test on the ingredient compared to the EGF growth factor.<br>**Ex vivo test on Collagen V after 7 days. Application of the serum formula every 2 days (total of 4 applications).<br>***Ex vivo test on elastin fiber length after 7 days. Application of the serum formula every 2 days (total of 4 applications).</div>
+        <button class="btn" onclick="copierTexte('texteEN')">Copier le texte</button>
+    </div>
+
+    <!-- ÉTAPE 3 : LA PUBLICATION -->
+    <div class="step">
+        <div class="step-title">3. Publiez !</div>
+        <p class="instruction">Ouvrez LinkedIn, collez le texte et ajoutez la vidéo que vous venez de télécharger.</p>
+        <a href="https://www.linkedin.com/feed/" target="_blank" class="btn btn-linkedin">Ouvrir LinkedIn</a>
+    </div>
+</div>
+
+<script>
+    function copierTexte(id) {
+        var div = document.getElementById(id);
+        var text = div.innerText;
+        
+        navigator.clipboard.writeText(text).then(function() {
+            alert('Texte copié avec succès ! Vous pouvez maintenant le coller sur LinkedIn.');
+        }, function(err) {
+            alert('Erreur lors de la copie du texte.');
+        });
+    }
+</script>
+
+</body>
+</html>
